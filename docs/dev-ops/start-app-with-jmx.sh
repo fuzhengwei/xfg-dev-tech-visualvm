@@ -4,6 +4,24 @@
 # 作者: xiaofuge
 # 用途: 启动Spring Boot应用并开启JMX远程连接功能
 
+# 给脚本添加执行权限
+# chmod +x start-app-with-jmx.sh
+
+# 启动应用
+# ./start-app-with-jmx.sh start
+
+# 查看状态
+# ./start-app-with-jmx.sh status
+
+# 显示JMX连接信息
+# ./start-app-with-jmx.sh jmx
+
+# 查看日志
+# ./start-app-with-jmx.sh logs
+
+# 停止应用
+# ./start-app-with-jmx.sh stop
+
 # 配置参数
 APP_NAME="xfg-dev-tech-visuallvm-app"
 APP_VERSION="1.0-SNAPSHOT"
