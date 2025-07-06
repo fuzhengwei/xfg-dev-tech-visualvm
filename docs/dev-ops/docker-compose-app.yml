@@ -1,0 +1,22 @@
+# /usr/local/bin/docker-compose -f /docs/dev-ops/environment/environment-docker-compose-2.4.yml up -d
+version: '3.8'
+# docker-compose -f docker-compose-app.yml up -d
+# 你需要修改system为你自身系统的仓库名
+services:
+  xfg-dev-tech:
+    image: fuzhengwei/xfg-dev-tech-visuallvm-app:1.0
+    container_name: xfg-dev-tech
+    restart: on-failure
+    ports:
+      - "8091:8091"
+    environment:
+      - TZ=PRC
+      - SERVER_PORT=8091
+      # 2c4g 配置，4c8g 翻倍，-Xms4096m -Xmx4096m | -Xmx –Xms：指定java堆最大值（默认值是物理内存的1/4(<1GB)）和初始java堆最小值（默认值是物理内存的1/64(<1GB))
+      - JAVA_OPTS=-Xms2048m -Xmx2048m
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
